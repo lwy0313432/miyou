@@ -5,13 +5,13 @@
  * */
 
 /* vim:set ts=4 sw=4 et fdm=marker: */
-class indexAction extends ApiBaseAction{
+class indexAction extends WebBaseAction{
     public function beforeExecute(){
-        echo 12345;
-        die;
     }
     public function run($args=null){
         $userObj  = new User();
-        $this->data = $userObj->getUserInfo(0);
+        $uid= $this->getUid();
+        $uid=1;
+        $this->data = $userObj->getUserInfo($uid);
     }
 }

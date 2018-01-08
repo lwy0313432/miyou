@@ -164,19 +164,13 @@ class User{
      public static function getUserInfo($uid){
          $uid=intval($uid);
          if($uid==0){
-             throw new CException(Errno::USER_IS_NO_LOGIN_ERROR);
+             throw new CException(Errno::PARAM_INVALID);
          }
          $dao_user      = new Dao_Default_UserModel();
-         $dao_user_agent= new Dao_Default_UserAgentModel();
          $user_info=$dao_user->where(array('id'=>$uid))->find();
          if(!$user_info){
              throw new CException(Errno::USER_IS_NO_LOGIN_ERROR);
          }
-         $sql="SELECT mobile FROM user,user_agent WHERE pid=user.id AND user.id".$uid;
-         $agent_info=$dao_user_agent->Fetch($sql,false);
-         $user['mobile']    =isset($user_info['mobile'])?Tools::mobile_star($user_info['mobile']):'';
-         $user['city_name'] =isset($user_info['city'])?$user_info['city']:'';
-         $user['agent_name']=isset($agent_info[0]['mobile'])?Tools::mobile_star($agent_info[0]['mobile']):'';
          return $user;
          
      }

@@ -57,7 +57,6 @@ class Model_Config
         if (empty($dbName)) {
             $dbName = self::getDbGlobalConf($conf_db_name);
         }
-        
         if (null === $dbName || !isset($dbConfig[$dbName]) || null === $dbConfig[$dbName]) {
             throw new Exception("please check your config file,lack $dbName in db section");
         }

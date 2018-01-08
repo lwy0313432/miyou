@@ -57,7 +57,7 @@ class Config{
         );
     }
     
-    const  UPLOAD_URL="https://caiyunupload.b0.upaiyun.com/";
+    const  UPLOAD_URL="miyouimg.b0.aicdn.com/";
     
     
     const  UPLOAD_TYPE        ='person_loan_upload';

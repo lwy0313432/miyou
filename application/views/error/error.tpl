@@ -1,7 +1,7 @@
 <html>
 <body>
 <{if $show_error}>
-    <{$exceptionMsg}>
+    <{$errMsg}>
 <{/if}>
 </body>
 </html>
