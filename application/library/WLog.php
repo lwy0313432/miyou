@@ -27,7 +27,8 @@ class WLog
         if ($argc > 1) {
             $message .= " | [PARAM] ".json_encode($arguments[1]);
         } 
-        $args[2] = 'personal_loan';
+        $arrConfig = Yaf_Application::app()->getConfig();
+        $args[2] = $arrConfig['app']['name'] ? $arrConfig['app']['name'] :'default';
         $backtrace = debug_backtrace();
         $trace = $backtrace[1];
         $trace2 = $backtrace[2];

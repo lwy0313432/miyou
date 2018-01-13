@@ -60,7 +60,8 @@ class Config{
     const  UPLOAD_URL="miyouimg.b0.aicdn.com/";
     
     
-    const  UPLOAD_TYPE        ='person_loan_upload';
+    const  PHOTO_TYPE_1=1; //首次照片上传
+    const  PHOTO_TYPE_2=2; //第二次照片上传
     const  UPLOAD_DEFAULT_TITLE='上传用户身份证';
     
     //短信相关end
